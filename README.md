@@ -1,8 +1,11 @@
 # Climate Anomaly Detection in Sri Lanka using Isolation Forest
 
-**Course:** CS5803 – Advanced Data Mining, Master of Data Science and AI, CSE, UOM.
-**Author:** Deeghayu Adhikari 
-**Project ID:** `258722D`
+> 📚 **Course:** CS5803 – Advanced Data Mining  
+> 👤 **Author:** Deeghayu Adhikari  
+> 🆔 **Project ID:** `258722D`  
+> 🎓 Master of Data Science and AI, CSE, University of Moratuwa
+
+---
 
 ---
 
