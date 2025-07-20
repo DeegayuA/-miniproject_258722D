@@ -101,7 +101,4 @@ This project was developed using Python 3 and standard data science libraries. T
     -   `matplotlib==<version_from_your_env>` (e.g., 3.7.1)
     -   `seaborn==<version_from_your_env>` (e.g., 0.12.2)
     -   `jupyterlab==<version_from_your_env>` (e.g., 3.6.3)
-
-*(**Note to user:** Replace `<your-id>` and `<version_from_your_env>` with your actual details. You can generate the exact versions for `requirements.txt` by running `pip freeze > requirements.txt` in your activated virtual environment.)*
-
 ---
