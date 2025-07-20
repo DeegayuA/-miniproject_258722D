@@ -1,0 +1,11 @@
+# Core Data Science Libraries
+pandas==1.5.3
+scikit-learn==1.2.2
+matplotlib==3.7.1
+seaborn==0.12.2
+numpy>=1.21
+
+# Jupyter environment
+notebook>=6.5.4
+jupyterlab==3.6.3
+

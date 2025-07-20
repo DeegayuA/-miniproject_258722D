@@ -52,7 +52,7 @@ miniproject_258722D/
 │   └── SriLanka_Weather_Dataset.csv         # The raw dataset used for analysis.
 │
 ├── notebooks/
-│   └── Project_Data_mining_Deeghayu.ipynb   # Jupyter Notebook containing the complete analysis.
+│   └── Project_258722D.ipynb   # Jupyter Notebook containing the complete analysis.
 │
 ├── requirements.txt                         # Python dependencies for the project.
 └── README.md                                # This file.
