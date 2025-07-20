@@ -7,69 +7,85 @@
 
 ---
 
----
-
 ## 1. Project Overview
 
-This project conducts a data-driven analysis of climate anomalies in Sri Lanka using a weather dataset spanning from 2010 to 2023. The goal is to identify statistically significant deviations from normal weather patterns, which may serve as indicators of climate instability.
+This project conducts a data-driven analysis of climate anomalies in Sri Lanka using a comprehensive weather dataset spanning from **January 2010 to June 2023**. The goal is to identify statistically significant deviations from normal weather patterns, which can serve as key indicators of climate instability and the local impacts of climate change.
 
 The core methodology involves:
-1.  **Data Preprocessing:** Cleaning and preparing the dataset for time-series analysis.
-2.  **Exploratory Data Analysis (EDA):** Understanding the distributions and trends of key meteorological variables.
-3.  **Feature Engineering:** Creating time-aware features like rolling averages and lagged variables to enhance model performance.
-4.  **Anomaly Detection:** Applying an **Isolation Forest** model to detect unusual weather events based on a multi-feature input.
+1.  **Data Preprocessing:** Cleaning and preparing the dataset of over 147,000 records.
+2.  **Exploratory Data Analysis (EDA):** Visualizing distributions and trends to understand underlying meteorological patterns.
+3.  **Feature Engineering:** Creating time-aware features, such as 7-day rolling temperature averages, to improve model context.
+4.  **Anomaly Detection:** Applying an **Isolation Forest** algorithm to detect unusual weather events based on 14 key features like temperature, precipitation, and wind.
 5.  **Analysis & Visualization:** Interpreting the detected anomalies by examining their geographical and temporal distributions and visualizing them on time-series plots.
 
-The analysis successfully identified over 20,000 anomalous days, with notable concentrations in specific cities (e.g., Hatton, Badulla) and years.
+---
 
-## 2. Repository Structure
+## 2. Key Insights & Findings
+
+The analysis successfully uncovered significant patterns of climate instability. Key insights include:
+
+*   **Significant Volatility Detected:** The Isolation Forest model identified **20,065 anomalous days** (~13.6% of the dataset), indicating that unusual weather events are a notable feature of Sri Lanka's climate over the past decade.
+
+*   **Geographical Concentration of Anomalies:** The anomalies are not uniformly distributed. The cities most affected are concentrated in the central highlands and specific coastal regions:
+    1.  **Hatton:** 4,913 anomalies
+    2.  **Badulla:** 2,528 anomalies
+    3.  **Kandy:** 1,847 anomalies
+
+*   **Temporal Hotspots:** Certain years experienced a higher frequency of anomalies, with **2014, 2010, and 2016** standing out as the most volatile years in the dataset.
+
+*   **The "Anomaly Profile":** Anomalous days are defined by extreme conditions, especially:
+    *   **Extreme Precipitation:** On average, anomalous days recorded nearly **3 times more rainfall** than normal days.
+    *   **High Temperature Variance:** While the mean temperature was slightly lower on anomalous days, the standard deviation was much higher, pointing to more extreme temperature swings (both hotter highs and colder lows).
+    *   **Common Weather Events:** Anomalies were most frequently associated with moderate rain (`weathercode` 63), drizzle (51), and surprisingly, clear skies (1), suggesting unusual heat or cold snaps.
+
+---
+
+## 3. Repository Structure
 
 This repository is organized as follows:
-miniproject_<your-id>/
+
+<pre><code>
+```
+miniproject_258722D/
 │
 ├── data/
-│ ├── SriLanka_Weather_Dataset.csv # The raw dataset used for analysis
-│ └── (or a script to download the data if it's too large)
+│   └── SriLanka_Weather_Dataset.csv         # The raw dataset used for analysis.
 │
 ├── notebooks/
-│ └── Project_Data_mining_Deeghayu (1).ipynb # Jupyter Notebook with the full analysis
+│   └── Project_Data_mining_Deeghayu.ipynb   # Jupyter Notebook containing the complete analysis.
 │
-├── src/
-│ └── (Optional: Any helper scripts or Python modules if the code is refactored)
-│
-├── requirements.txt # Python dependencies for the project
-└── README.md # This file
+├── requirements.txt                         # Python dependencies for the project.
+└── README.md                                # This file.
+```
+</code></pre>
 
-## 3. How to Run the Project
 
-This project was developed using Python 3 and standard data science libraries. The analysis is contained within a single Jupyter Notebook.
+## 4. How to Run the Project
+
+This project was developed using Python 3. The entire analysis is encapsulated within the provided Jupyter Notebook.
 
 ### Prerequisites
 
 -   Python 3.8+
 -   `pip` package manager
--   A virtual environment tool (`venv` or `conda`) is highly recommended.
+-   A virtual environment tool (`venv` or `conda`) is strongly recommended.
 
 ### Setup Instructions
 
-1.  **Clone the repository:**
+1.  **Clone the Repository:**
     ```sh
-    git clone <repository-url>
-    cd miniproject_<your-id>
+    git clone https://github.com/your-username/miniproject_258722D.git
+    cd miniproject_258722D
     ```
 
-2.  **Create and activate a virtual environment:**
+2.  **Create and Activate a Virtual Environment:**
     ```sh
     # Using venv
     python3 -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-
-    # Or using Conda
-    # conda create -n datamining_env python=3.8
-    # conda activate datamining_env
     ```
 
-3.  **Install the required dependencies:**
+3.  **Install Dependencies:**
     The `requirements.txt` file lists all necessary libraries. Install them using pip:
     ```sh
     pip install -r requirements.txt
@@ -77,28 +93,23 @@ This project was developed using Python 3 and standard data science libraries. T
 
 ### Execution
 
-1.  **Start Jupyter Lab or Jupyter Notebook:**
+1.  **Start Jupyter:**
     ```sh
-    jupyter lab
-    ```
-    or
-    ```sh
-    jupyter notebook
+    jupyter lab  # or jupyter notebook
     ```
 
-2.  **Open the notebook:**
-    Navigate to the `notebooks/` directory and open `Project_Data_mining_Deeghayu (1).ipynb`.
+2.  **Open the Notebook:**
+    Navigate to the `notebooks/` directory and open `Project_Data_mining_Deeghayu.ipynb`.
 
-3.  **Run the cells:**
-    Execute the cells sequentially from top to bottom. All figures and tables will be generated directly within the notebook.
+3.  **Run All Cells:**
+    To reproduce the analysis and all outputs, select **"Run" > "Run All Cells"** from the menu.
 
 ### Expected Runtime and Software Versions
 
 -   **Expected Runtime:** The entire notebook should execute in **under 2 minutes** on a standard modern laptop.
 -   **Key Software Versions:**
-    -   `pandas==<version_from_your_env>` (e.g., 1.5.3)
-    -   `scikit-learn==<version_from_your_env>` (e.g., 1.2.2)
-    -   `matplotlib==<version_from_your_env>` (e.g., 3.7.1)
-    -   `seaborn==<version_from_your_env>` (e.g., 0.12.2)
-    -   `jupyterlab==<version_from_your_env>` (e.g., 3.6.3)
----
+    -   `pandas==1.5.3`
+    -   `scikit-learn==1.2.2`
+    -   `matplotlib==3.7.1`
+    -   `seaborn==0.12.2`
+
